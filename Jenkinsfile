@@ -3,7 +3,7 @@ pipeline {
   
   environment {
 
-      sonar_url = 'http://172.31.7.145:9000/'
+      sonar_url = 'htttp://172.31.7.145:9000/'
       sonar_username = 'admin'
       sonar_password = 'admin'
       nexusUrl = '172.31.7.145'
@@ -43,4 +43,5 @@ pipeline {
            }
          }
       }
-   }
+	
+	
