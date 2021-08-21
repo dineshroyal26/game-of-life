@@ -22,7 +22,7 @@ pipeline {
    stage('git clone') {
          steps {
             // Get some code from a GitHub repository
-            git 'https://github.com/snehitha-reddy/Game.git'
+            git 'https://github.com/dineshroyal26/game-of-life.git'
         }
         
         }
