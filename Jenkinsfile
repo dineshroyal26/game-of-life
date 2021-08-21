@@ -6,6 +6,9 @@ pipeline {
       sonar_url = 'http://172.31.7.145:9000/'
       sonar_username = 'admin'
       sonar_password = 'admin'
+      nexusUrl = '172.31.7.145'
+      artifact_version = '0.0.1'
+
  }
 
    tools {
