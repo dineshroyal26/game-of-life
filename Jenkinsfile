@@ -60,7 +60,8 @@ pipeline {
 	      stage ('Docker publish') {
          steps {
            sh '''
-	   docker push dineshroyal1996/test:v4
+	   docker login -u="$dineshroyal1996" -p="$8686Aa@123"
+           docker push dineshroyal1996/test:v4
 	  '''
 	 }
 	   }
