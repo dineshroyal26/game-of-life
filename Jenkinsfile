@@ -54,6 +54,7 @@ pipeline {
          steps {
            sh '''
 	   docker build -t dineshroyal1996/test:v4 .
+	     docker push -t dineshroyal1996/test:v4 .
 	   '''
 	 }
 	   }
