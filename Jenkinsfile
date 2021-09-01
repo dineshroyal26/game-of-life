@@ -54,7 +54,7 @@ pipeline {
          steps {
            sh '''
 	   cd ${WORKSPACE}
-	   docker build -t dineshroyal1996/test:v4
+	   docker build -t dineshroyal1996/test:v4 .
 	   '''
 	 }
 	   }
