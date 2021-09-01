@@ -53,9 +53,6 @@ pipeline {
 	   stage ('Docker build') {
          steps {
            sh '''
-	   cd ${WORKSPACE}
-	   sudo groupadd docker
-	   sudo usermod -aG docker ${USER}
 	   docker build -t dineshroyal1996/test:v4 .
 	   '''
 	 }
