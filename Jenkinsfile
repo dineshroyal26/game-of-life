@@ -47,6 +47,20 @@ pipeline {
 	steps {
 	nexusArtifactUploader artifacts: [[artifactId:'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace/main-pipeline/gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: '4eae33a9-d266-4664-9afe-de75fe1c1242', groupId: 'com.wakaleo.gameoflife', nexusUrl: '172.31.7.145:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'release', version: '4.0.0'
            archiveArtifacts '**/*.jar'
+	}
+	  }
+	    stage('Docker Build') {
+    steps {
+        sh '''
+	docker build -t dineshroyal1996/test:v4 /var/lib/jenkins/workspace/docker-test/
+	'''
+      }
+    }
+ stage('Docker publish') {
+    steps {
+      script {
+  withDockerRegistry(registry: [credentialsId: 'd3485138-e723-4168-a41a-d2a4711d537c']) {
+    sh 'docker push dineshroyal1996/test:v4'
 	
 	 }
 	   }
