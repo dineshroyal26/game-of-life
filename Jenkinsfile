@@ -50,9 +50,24 @@ pipeline {
 	
 	 }
 	   }
+	  tage('Docker Build') {
+    steps {
+        sh '''
+	docker build -t dineshroyal1996/test:v4 .
+	'''
+      }
+    }
+ stage('Docker publish') {
+    steps {
+      script {
+  withDockerRegistry(registry: [credentialsId: 'd3485138-e723-4168-a41a-d2a4711d537c']) {
+    sh 'docker push dineshroyal1996/test:v4'
+    
        }
-}
-
+      }
+    }
+ }
+   }
 
 	
 	
