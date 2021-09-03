@@ -50,7 +50,7 @@ pipeline {
 	
 	 }
 	   }
-	  tage('Docker Build') {
+	  stage('Docker Build') {
     steps {
         sh '''
 	docker build -t dineshroyal1996/test:v4 .
